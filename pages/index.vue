@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <!-- Input Controls -->
     <v-row>
       <v-col cols="12" md="4">
         <v-select
@@ -36,76 +37,52 @@
       </v-col>
     </v-row>
 
-    <div id="chart" style="width: 100%; height: 400px;"></div>
+    <!-- Chart Component -->
+    <InteractiveChart :data="chartData" :type="dataType" />
   </v-container>
 </template>
 
 <script>
-import * as echarts from 'echarts';
+import InteractiveChart from '~/components/InteractiveChart.vue';
 
 export default {
+  components: {
+    InteractiveChart
+  },
   data() {
     return {
-      // Data bound to the form inputs
+      // Data for input controls
       category: 'Category A',
       value: 50,
       dataType: 'Line',
       numItems: 5,
 
-      // Options for dropdowns and controls
+      // Options for controls
       categoryOptions: ['Category A', 'Category B', 'Category C'],
       chartTypes: ['Line', 'Bar', 'Pie'],
 
-      // Chart instance and data
-      chartInstance: null,
+      // Chart data
       chartData: []
     };
   },
   methods: {
-    // Generate random data based on user input
+    // Generate data based on inputs
     generateData() {
       this.chartData = Array.from({ length: this.numItems }, (_, i) => ({
         name: `${this.category} ${i + 1}`,
-        value: Math.round(Math.random() * this.value),
+        value: Math.round(Math.random() * this.value)
       }));
-    },
-    // Update the ECharts chart
-    updateChart() {
-      if (this.chartInstance) {
-        const option = {
-          title: { text: 'Dynamic Chart' },
-          tooltip: {},
-          xAxis: { type: 'category', data: this.chartData.map((item) => item.name) },
-          yAxis: { type: 'value' },
-          series: [
-            {
-              type: this.dataType.toLowerCase(),
-              data: this.chartData.map((item) => item.value),
-            },
-          ],
-        };
-        this.chartInstance.setOption(option);
-      }
     }
   },
   watch: {
-    // Watchers for input changes to trigger data and chart updates
+    // Watchers to update chart data when inputs change
     category() { this.generateData(); },
     value() { this.generateData(); },
-    dataType() { this.updateChart(); },
-    numItems() { this.generateData(); },
-    chartData() { this.updateChart(); }
+    numItems() { this.generateData(); }
   },
   mounted() {
-    // Initialize ECharts when component is mounted
-    this.chartInstance = echarts.init(document.getElementById('chart'));
+    // Generate initial data when component mounts
     this.generateData();
   }
 };
 </script>
-
-<style scoped>
-#chart {
-  margin-top: 20px;
-}
-</style>
