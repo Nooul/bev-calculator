@@ -7,10 +7,10 @@ Steps 3 to 10 are optional if we won't collaborate on the same codebase synchron
 0. [Bev Calculator Code Repo](https://github.com/Nooul/bev-calculator)
 1. [Install - Visual Code - Editor](https://code.visualstudio.com/)
 2. [Install - Node.js Server + npm (package manager)](https://nodejs.org/en/download/prebuilt-installer)
-3. Make sure npm command can be typed + enter in cmder and you don't get a message 'npm' is not recognized as an internal or external command, operable program or batch file.
+3. Make sure npm command can be typed + enter in a terminal (cmd.exe) and you don't get a message 'npm' is not recognized as an internal or external command, operable program or batch file.
 4. (optional)[Install Cmder - Console Emulator](https://cmder.app/)
 5. (optional)[Install - Git command](https://git-scm.com/downloads)
-6. (optional) Make sure git command can be typed + enter in cmder and you don't get a message 'git' is not recognized as an internal or external command, operable program or batch file.
+6. (optional) Make sure git command can be typed + enter in (cmder.exe) and you don't get a message 'git' is not recognized as an internal or external command, operable program or batch file.
 7. (optional)[Create account at Github](https://github.com)
 8. (optional)[Install - Github Desktop](https://desktop.github.com/download/)
 9. (optional)[Clone Repo Bev Calculator Repo using Github Desktop](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
