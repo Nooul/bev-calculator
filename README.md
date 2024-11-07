@@ -1,6 +1,6 @@
 # Without Collaboration:
 
-Steps 3 to 10 are optional if we won't collaborate on the same codebase synchronously.. If that is the case you can just download the zip + extract it from zero step. Follow steps 1,2,3. Then install and run it as below with `npm install` and afterwards `npm run dev` and read any documentation needed from 11 to 13 so you are able to make changes.
+Steps 4 to 10 are optional if we won't collaborate on the same codebase synchronously.. If that is the case you can just download the zip + extract it from zero step. Follow steps 1,2,3. Then install and run it as below with `npm install` and afterwards `npm run dev` and read any documentation needed from 11 to 13 so you are able to make changes.
 
 # Tools + documentation:
 
